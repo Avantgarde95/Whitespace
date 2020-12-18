@@ -2,6 +2,7 @@
 
 Convert human-readable code to [Whitespace](http://web.archive.org/web/20150623025348/http://compsoc.dur.ac.uk/whitespace/).
 
+- Supports the subset of [Whitespace 0.3](https://ko.wikipedia.org/wiki/화이트스페이스_(프로그래밍_언어)).
 - This repository doesn't include the Whitespace interpreter.
 - For the details, see the document inside `Convert.py`.
 
