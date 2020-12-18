@@ -1,6 +1,7 @@
 """Convert human-readable code to Whitespace code.
 
 Author: Hunmin Park (Avantgarde95)
+Repository: https://github.com/Avantgarde95/Whitespace
 
 Language: Supports the subset of Whitespace 0.3.
 - https://ko.wikipedia.org/wiki/화이트스페이스_(프로그래밍_언어)
