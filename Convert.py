@@ -171,7 +171,8 @@ def main():
         p.write('\n'.join(convertedLines))
 
     with open(outputPath + '/' + inputFilePureName + '.ws', 'w') as p:
-        p.write(''.join(encodedLines))
+        # We put '.' at the end for preventing GitHub from removing the last newline character.
+        p.write(''.join(encodedLines) + '.')
 
     print('Done!')
 
