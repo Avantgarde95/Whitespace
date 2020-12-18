@@ -1,0 +1,13 @@
+push 10
+dup
+op* # 10 X 10.
+push 1
+op+ # e = 100 + 1.
+
+push 8
+push 9
+op* # H = 8 X 9.
+
+print
+print
+exit

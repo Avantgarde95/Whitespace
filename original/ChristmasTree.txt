@@ -1,0 +1,101 @@
+# var n = 5, x = n.
+label 0
+push 5
+dup
+
+# do { y = x - 1; ...; print('\n'); x -= 1 } while (x != 0).
+label 1
+dup
+push 1
+op- # y = x - 1 => Stack = [n, x, y].
+
+    # while (y != 0) { print(' '); y -= 1 }.
+    label 2
+    dup
+    jumpz 3 # Break if (y = 0).
+    push \s
+    print
+    push 1
+    op- # y -= 1
+    jump 2
+
+    # var z = (n - x) * 2 + 1.
+    label 3
+    pop # Clear y => Stack = [n, x].
+    dupn 1
+    dupn 1
+    op- # z = n - x => Stack = [n, x, z].
+    push 2
+    op* # z *= 2.
+    push 1
+    op+ # z += 1.
+
+    # while (z != 0) { print('*'); z -= 1 }.
+    label 4
+    dup
+    jumpz 5 # Break if z = 0.
+    push *
+    print
+    push 1
+    op- # z -= 1.
+    jump 4
+
+label 5
+pop # Clear z => Stack = [n, x].
+push \n
+print
+push 1
+op- # x -= 1.
+dup
+jumpz 6 # Break if x = 0.
+jump 1
+
+# var s = n - 1.
+label 6
+pop # Clear x => Stack = [n].
+dup
+push 1
+op- # s = n - 1 => Stack = [n, s].
+
+# while (s != 0) { print(' '); s -= 1 }.
+label 7
+dup
+jumpz 8 # Break if (s = 0).
+push \s
+print
+push 1
+op- # s -= 1.
+jump 7
+
+# print('|\n'); var t = n - 2.
+label 8
+pop # Clear s => Stack = [n].
+push |
+print
+push \n
+print
+dup
+push 2
+op- # t = n - 2 => Stack = [n, t].
+
+# while (t != 0) { print(' '); t -= 1 }.
+label 9
+dup
+jumpz 10 # Break if (t = 0).
+push \s
+print
+push 1
+op- # t -= 1.
+jump 9
+
+# print('===\n').
+label 10
+push =
+dup
+dup
+print
+print
+print
+push \n
+print
+exit

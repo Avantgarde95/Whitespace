@@ -1,0 +1,43 @@
+# Loop 4 times
+label 0
+push 4 # x.
+
+    # Print '-' 3 times
+    label 1
+    push 3 # y.
+
+    label 2
+    push -
+    print
+    push 1
+    op- # y -= 1.
+    dup
+    jumpz 3 # If y = 0.
+    jump 2
+
+    # Print '*' 2 times
+    label 3
+    pop # Clear y.
+    push 2 # z.
+
+    label 4
+    push *
+    print
+    push 1
+    op- # z -= 1.
+    dup
+    jumpz 5 # If z = 0.
+    jump 4
+
+    label 5
+    pop # Clear z.
+    push \n
+    print
+    push 1
+    op- # x -= 1.
+    dup # If x = 0.
+    jumpz 6
+    jump 1
+
+label 6
+exit

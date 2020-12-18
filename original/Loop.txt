@@ -1,0 +1,27 @@
+# Print '\s' 3 times
+push 3
+
+label 0
+push \s
+print
+push 1
+op-
+dup
+jumpz 1
+jump 0
+
+# Print '*' 2 times
+label 1
+push 2
+
+label 2
+push *
+print
+push 1
+op-
+dup
+jumpz 3
+jump 2
+
+label 3
+exit

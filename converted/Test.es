@@ -1,0 +1,13 @@
+SS STSTSL 
+SLS 
+TSSL # 10 X 10.
+SS STL 
+TSSS # e = 100 + 1.
+
+SS STSSSL 
+SS STSSTL 
+TSSL # H = 8 X 9.
+
+TLSS 
+TLSS 
+LLL 
